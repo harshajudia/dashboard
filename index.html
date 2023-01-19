@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+    </head>
+    <body>
+
+        <div class="header">
+            <img src="icons/logo used in header.svg" class="header--icon" />
+            <div class="nav--btns">
+              <a href="javascript:void(0)" class="closebtn" id="closeBtn" onclick="closeMenu()">&times;</a>
+              <ul class="nav-links" id="navLinks">
+                <li class="nav-item active"><a href="/pages/login.html">DASHBOARD</a></li>
+                <li class="nav-item" id="content" onclick='headerClick("content")'><a href="#">CONTENT</a></li>
+                <li class="nav-item" id="users" onclick='headerClick("users")'><a href="#">USERS</a></li>
+                <li class="nav-item" id="reports" onclick='headerClick("reports")'><a href="#">REPORTS</a></li>
+                <li class="nav-item" id="admin" onclick='headerClick("admin")'><a href="#">ADMIN</a></li>
+              </ul>
+              <div class="nav-item"><span class="heading--badge">2</span><img src="icons/alerts.svg" /></div>
+              <div class="nav-item">
+                <span class="heading--badge">1</span>
+                <img src="icons/announcements.svg" />
+              </div>
+              <div class="nav-item">
+                <span class="heading--badge avatar--badge">T</span>
+                <img class="avatar" src="icons/avtar.jpg" />
+              </div>
+              <img class="nav-item mobile--menu" id="mobile--menu" onclick="openMenu()" src="icons/hamburger-menu.svg">
+            </div>
+          </div>
+
+        <div class="outer">
+        
+            <div style="width: 100%">
+                <div class="heading">
+                  <button class="ctab">
+                    <img style="width:20px; height:20px;" src="icons/courses.svg">
+                    <p><span><h2>4</h2></span> Courses</p>
+                  </button>
+                  <button class="ctab">
+                    <img style="width:20px; height:20px;" src="icons/classes.svg">
+                    <p><span><h2>4</h2></span> Classes</p>
+                  </button>
+                </div>
+              </div>
+
+              <div class="filters">
+                <div><p class="txt">showing 4 of 4 courses</p></div>
+                <div class="sort">
+                  <span class="txt">sort by:</span>
+                  <select name="sorting" id="sorting">
+                    <option value="name">Course Name</option>
+                  </select>
+                  <button style="background-color:#e4dfdf;" class="sortbtn">
+                    <img  src="icons/sort.svg" />
+                  </button>
+                </div>
+              </div>
+
+              
+            <div class="container">
+
+            </div>
+        </div>
+
+            <div class="footer">    
+                <div class="footer-link">
+                    <p><a href="#" style="color: rgb(6, 99, 63);">About</a> | <a href="#" style="color: rgb(6, 99, 63);">Contact Us</a></p>
+                </div>
+                <div class="footer-bottom">
+                    <img src="icons/logo used in footer.svg">
+                    <p class="space">&nbsp| Copyright &#169 2020-2021 <b>Zeus Systems Pvt. Ltd.</b> &nbsp&nbsp All rights reserved.</p>  
+                </div>
+            </div>
+
+            <script>
+                var ele = document.getElementById("navLinks");
+                var clBtn = document.getElementById("closeBtn");
+          
+                function headerClick(idName){
+                  for(var i=0;i<ele.children.length;i++){
+                    ele.children[i].classList.remove("active");
+                  }
+                  
+                  var element = document.getElementById(idName);
+                  element.classList.add("active");
+                }
+          
+                function openMenu(){
+                  ele.style.width="100%";
+                  ele.style.left="0px";
+          
+                  clBtn.style.display="block";
+                }
+                function closeMenu(){
+                  ele.style.width="0%";
+                  ele.style.left="-50px";
+          
+                  clBtn.style.display="none";
+                }
+              </script>
+
+              <script src="dash.js" type="module"></script>
+
+    </body>
+</html>
